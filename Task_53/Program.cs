@@ -42,7 +42,15 @@ void PrintMatrix(int[,] matr)
 
 void NewArray(int[,] matr)
 {
-
+for (int j = 0; j < matr.GetLength(1); j++)
+{
+    int obj = matr[0,j];
+    matr[0,j] = matr[matr.GetLength(0) -1, j];
+    matr[matr.GetLength(0)-1, j] = obj;
+}
 }
 
+PrintMatrix(matrix);
+System.Console.WriteLine();
+NewArray(matrix);
 PrintMatrix(matrix);

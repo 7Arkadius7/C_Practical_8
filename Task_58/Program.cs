@@ -2,11 +2,11 @@
 
 Console.WriteLine("Пожалуйста, введите количество строк первой матрицы");
 int rowsFirstMatrix = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Пожалуйста, введите количество столбцов первой матрицыматрицы");
+Console.WriteLine("Пожалуйста, введите количество столбцов первой матрицы");
 int columsFirstMatrix = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Пожалуйста, введите количество строк второй матрицы");
 int rowsSecondMatrix = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Пожалуйста, введите количество столбцов второй матрицыматрицы");
+Console.WriteLine("Пожалуйста, введите количество столбцов второй матрицы");
 int columsSecondMatrix = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Пожалуйста, введите минимально возможный элемент матриц");

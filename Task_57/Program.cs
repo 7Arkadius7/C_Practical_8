@@ -1,4 +1,4 @@
-﻿Console.Clear();
+﻿Console.Clear(); // метод замены столбцов и строк местами
 
 Console.WriteLine("Пожалуйста, введите количество строк матрицы");
 int rowsMatrix = Convert.ToInt32(Console.ReadLine());
@@ -8,9 +8,18 @@ Console.WriteLine("Пожалуйста, введите минимально в�
 int minimal = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Пожалуйста, введите максимально возможный элемент матрицы");
 int maximal = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine();
 
 
 int[,] matrix = CreateMatrix(rowsMatrix, columsMatrix, minimal, maximal);
+PrintMatrix(matrix);
+System.Console.WriteLine();
+int[] oneRowArray2D = MatrToOneRowArray(matrix);
+PrintArray(oneRowArray2D);
+System.Console.WriteLine();
+Array.Sort(oneRowArray2D);
+PrintArray(oneRowArray2D);
+HowManyNumbersInArray(oneRowArray2D);
 
 int[,] CreateMatrix(int rows, int colums, int min, int max)
 {
@@ -24,6 +33,17 @@ int[,] CreateMatrix(int rows, int colums, int min, int max)
         }
     }
     return matrix;
+}
+
+void PrintArray(int[] array)
+{
+    System.Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) System.Console.Write($"{array[i]}, ");
+        else System.Console.Write($"{array[i]}");
+    }
+    System.Console.Write("]");
 }
 
 void PrintMatrix(int[,] matr)
@@ -40,17 +60,34 @@ void PrintMatrix(int[,] matr)
     }
 }
 
-void ChangeFitstLastRows(int[,] matr)
+
+int[] MatrToOneRowArray(int[,] matr)
 {
-for (int j = 0; j < matr.GetLength(1); j++)
-{
-    int obj = matr[0,j];
-    matr[0,j] = matr[matr.GetLength(0) -1, j];
-    matr[matr.GetLength(0)-1, j] = obj;
-}
+    int[] oneRowArray = new int[matr.Length];
+    int counter = 0;
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            oneRowArray[counter] = matr[i, j];
+            counter++;
+        }
+    }
+    return oneRowArray;
 }
 
-PrintMatrix(matrix);
-System.Console.WriteLine();
-ChangeFitstLastRows(matrix);
-PrintMatrix(matrix);
+void HowManyNumbersInArray(int[] array)
+{
+    int count = 1;
+    int numForCount = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if(numForCount==array[i]) count++;
+        else 
+        {
+            System.Console.WriteLine($"{numForCount} -> {count}");
+            numForCount = array [i];
+            count = 1;
+        }
+    }
+}

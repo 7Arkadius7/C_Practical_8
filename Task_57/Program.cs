@@ -19,6 +19,7 @@ PrintArray(oneRowArray2D);
 System.Console.WriteLine();
 Array.Sort(oneRowArray2D);
 PrintArray(oneRowArray2D);
+System.Console.WriteLine();
 HowManyNumbersInArray(oneRowArray2D);
 
 int[,] CreateMatrix(int rows, int colums, int min, int max)
@@ -90,4 +91,5 @@ void HowManyNumbersInArray(int[] array)
             count = 1;
         }
     }
+    System.Console.WriteLine($"{numForCount} -> {count}");
 }

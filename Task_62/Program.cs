@@ -3,6 +3,7 @@
 int n = 4;
 int[,] matr = new int[n, n];
 
+
 void CreatSpiralMatrix(int[,] matr)
 {
     int temp = 1;
@@ -24,7 +25,6 @@ void CreatSpiralMatrix(int[,] matr)
     }
 }
 
-
 void PrintMatrix(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -38,7 +38,6 @@ void PrintMatrix(int[,] matr)
         System.Console.WriteLine(("]"));
     }
 }
-
 
 CreatSpiralMatrix(matr);
 PrintMatrix(matr);

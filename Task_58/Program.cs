@@ -1,4 +1,4 @@
-﻿Console.Clear(); // метод замены столбцов и строк местами
+﻿Console.Clear();
 
 Console.WriteLine("Пожалуйста, введите количество строк первой матрицы");
 int rowsFirstMatrix = Convert.ToInt32(Console.ReadLine());
